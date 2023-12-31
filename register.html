@@ -1,0 +1,55 @@
+   <html>
+	<head>
+		<title>Register</title>
+		<link rel="icon" href="icon.jpg"/>
+		<link rel="stylesheet" href="stylepage.css"/>
+		<script type="text/javascript">
+			function validateForm() {
+				var a = document.forms["myForm"]["name"].value;
+				var b = document.forms["myForm"]["email"].value;
+				var c = document.forms["myForm"]["user"].value;
+				var d = document.forms["myForm"]["phone"].value;
+				var e = document.forms["myForm"]["pass"].value;
+				var f = document.forms["myForm"]["confirm_pass"].value;
+				if (a == "" || b == "" || c == "" || d == "" || e == "" || f == "") {
+					alert("All Fields must be filled");
+					return false;
+				}else{
+					if(e != f){
+						alert("Password and Confirm Password do not match");
+						return false;
+					}else{
+						alert("Registered");
+						return true;
+					}
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<div id="header">
+			<h1 id="headtext">E-Learning Management System</h1>
+		</div>
+		<div id="section1">
+			<h1 id="heading">Register</h1>
+			<form name="myForm" action="#" method="POST" onsubmit="return validateForm()">
+				<input type="text" class="inputbox"  name="name" placeholder="fullname"/>
+				<input type="email" class="inputbox"  name="email" placeholder="email"/><br/>
+				<input type="text" class="inputbox"  name="user" placeholder="username"/>
+				<input type="phone" class="inputbox"  name="phone" placeholder="phone"/><br/>
+				<input type="password" class="inputbox"  name="pass" placeholder="password"/>
+				<input type="password"  class="inputbox" name="confirm_pass" placeholder="confirm password"/><br/>
+				<input type="submit" class="submitbutton"  name="register" value="Register" />
+			</form>
+			<small>Already registered</small><br/>
+			<a href="login.html"><input type="submit" class="submitbutton"  value="Login" /></a>
+		</div>
+		<div id="footer">
+			<br/>
+			<small>Copyright &reg;April  2019</small><br/>
+			<marquee>
+				<small>This site has been personally designed by <b>Dhirendra</b></small>
+			</marquee>
+		</div>
+	</body>
+</html>
